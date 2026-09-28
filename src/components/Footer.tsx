@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
 
       {/* Giant Background Watermark Behind Text */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0">
-        <span className="font-barlow text-[23vw] font-black tracking-tighter leading-none whitespace-nowrap bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.015] bg-clip-text text-transparent transform translate-y-10 sm:translate-y-14">
+        <span className="font-barlow text-[35vw] font-black tracking-tighter leading-none whitespace-nowrap bg-gradient-to-b from-white/[0.38] via-white/[0.25] to-white/[0.12] bg-clip-text text-transparent transform translate-y-4">
           urudev.uy
         </span>
       </div>
