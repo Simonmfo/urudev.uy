@@ -78,3 +78,19 @@
 .animate-float-delayed {
   animation: float-delayed 8s ease-in-out infinite;
 }
+
+@keyframes cursorBlink {
+  0%, 45% {
+    opacity: 1;
+  }
+  50%, 95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-cursor-blink {
+  animation: cursorBlink 0.9s infinite;
+}

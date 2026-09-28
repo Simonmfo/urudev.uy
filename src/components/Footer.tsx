@@ -1,8 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Logo } from './Logo';
 import { ArrowUp, Mail, MessageSquareShare, MapPin, Clock, ShieldCheck, Terminal, Cpu } from 'lucide-react';
 
+const WATERMARK_FULL_TEXT = 'urudev.uy';
+
 export const Footer: React.FC = () => {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const textRef = useRef<SVGTextElement>(null);
+  const [cursorX, setCursorX] = useState<number>(430);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && displayText === WATERMARK_FULL_TEXT) {
+      // Queda escrito por 10 segundos
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 10000);
+    } else if (isDeleting && displayText === '') {
+      // Pausa breve tras borrar antes de volver a escribir
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+      }, 800);
+    } else {
+      // Escribir a velocidad natural o borrar letra por letra
+      const speed = isDeleting ? 80 : 135;
+      timeout = setTimeout(() => {
+        setDisplayText((current) =>
+          isDeleting
+            ? WATERMARK_FULL_TEXT.slice(0, current.length - 1)
+            : WATERMARK_FULL_TEXT.slice(0, current.length + 1)
+        );
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting]);
+
+  // Actualizar la posición de la barrita vertical según el texto escrito
+  useEffect(() => {
+    if (textRef.current) {
+      try {
+        const bbox = textRef.current.getBBox();
+        if (displayText.length === 0) {
+          setCursorX(425);
+        } else {
+          setCursorX(bbox.x + bbox.width + 5);
+        }
+      } catch {
+        setCursorX(425);
+      }
+    }
+  }, [displayText]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -16,10 +67,10 @@ export const Footer: React.FC = () => {
       <div className="absolute -top-32 left-1/4 w-[500px] h-[350px] bg-[#005ff9]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-[400px] h-[300px] bg-[#00b087]/8 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Giant Background Watermark Behind Text - Edge-to-Edge Responsive */}
+      {/* Giant Background Watermark Behind Text - Edge-to-Edge Responsive Typewriter */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0 px-2 sm:px-4">
         <svg
-          viewBox="0 0 820 190"
+          viewBox="0 0 850 190"
           className="w-full h-auto select-none pointer-events-none block transform translate-y-6 sm:translate-y-10"
           preserveAspectRatio="xMidYMid meet"
           aria-hidden="true"
@@ -32,8 +83,9 @@ export const Footer: React.FC = () => {
             </linearGradient>
           </defs>
           <text
+            ref={textRef}
             id="footer-watermark-text"
-            x="410"
+            x="425"
             y="138"
             textAnchor="middle"
             fill="url(#footer-watermark-gradient)"
@@ -41,12 +93,24 @@ export const Footer: React.FC = () => {
             style={{
               fontFamily: "'Barlow', -apple-system, sans-serif",
               fontWeight: 900,
-              fontSize: '182px',
+              fontSize: '180px',
               letterSpacing: '-0.02em',
             }}
           >
-            urudev.uy
+            {displayText}
           </text>
+
+          {/* Barrita vertical que tintinea */}
+          <rect
+            x={cursorX}
+            y="32"
+            width="4"
+            height="110"
+            rx="2"
+            fill="url(#footer-watermark-gradient)"
+            opacity="0.7"
+            className="animate-cursor-blink"
+          />
         </svg>
       </div>
 
