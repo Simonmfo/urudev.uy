@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Award, X } from 'lucide-react';
+import { HeroDevVisual } from './HeroDevVisual';
 
 interface HeroProps {
   onOpenAdvisorModal: () => void;
@@ -65,9 +66,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
 
   return (
     <section className="w-full relative overflow-hidden bg-[#fcf9f8] py-16 md:py-24" id="inicio">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
+      {/* Background Interactive Development & Motion Layer */}
+      <HeroDevVisual />
+
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center relative z-10">
         {/* Top Badge */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#f0edec] border border-[#c2c6d8]/50 mb-8 shadow-xs hover:border-[#005ff9]/50 transition-colors">
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#c2c6d8]/60 mb-8 shadow-xs hover:border-[#005ff9]/50 transition-colors">
           <span className="w-2 h-2 rounded-full bg-[#3fd5ae] animate-pulse"></span>
           <span className="font-mono-tech text-[12px] uppercase tracking-wider text-[#1c1b1b] font-semibold">
             SOFTWARE B2B A MEDIDA · PAYSANDÚ, URUGUAY
@@ -76,7 +80,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
 
         {/* Main Headline */}
         <h1 className="font-barlow text-[36px] sm:text-[46px] md:text-[56px] leading-[1.12] font-bold text-[#1c1b1b] max-w-4xl tracking-tight">
-          Desarrollamos el Software que su Empresa Necesita para Escalar.
+          Desarrollamos el Software que su Empresa{' '}
+          <span className="bg-gradient-to-r from-[#005ff9] via-[#0047ba] to-[#008f6b] bg-clip-text text-transparent">
+            Necesita para Escalar.
+          </span>
         </h1>
 
         {/* Executive Subtitle */}
