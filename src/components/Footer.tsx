@@ -16,11 +16,38 @@ export const Footer: React.FC = () => {
       <div className="absolute -top-32 left-1/4 w-[500px] h-[350px] bg-[#005ff9]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-[400px] h-[300px] bg-[#00b087]/8 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Giant Background Watermark Behind Text */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0 px-8">
-        <span className="font-barlow text-[9.5vw] sm:text-[11vw] md:text-[11.8vw] font-black tracking-tighter leading-normal py-4 px-4 whitespace-nowrap bg-gradient-to-b from-white/[0.35] via-white/[0.22] to-white/[0.10] bg-clip-text text-transparent transform translate-y-2 sm:translate-y-4">
-          urudev.uy
-        </span>
+      {/* Giant Background Watermark Behind Text - Edge-to-Edge Responsive */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0 px-2 sm:px-4">
+        <svg
+          viewBox="0 0 820 190"
+          className="w-full h-auto select-none pointer-events-none block transform translate-y-6 sm:translate-y-10"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="footer-watermark-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.36" />
+              <stop offset="50%" stopColor="#ffffff" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+          <text
+            id="footer-watermark-text"
+            x="410"
+            y="138"
+            textAnchor="middle"
+            fill="url(#footer-watermark-gradient)"
+            className="font-barlow font-black"
+            style={{
+              fontFamily: "'Barlow', -apple-system, sans-serif",
+              fontWeight: 900,
+              fontSize: '182px',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            urudev.uy
+          </text>
+        </svg>
       </div>
 
       {/* Main Container */}
