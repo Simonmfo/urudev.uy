@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Award, X } from 'lucide-react';
 import { HeroDevVisual } from './HeroDevVisual';
+
+const FULL_HERO_TITLE = 'Desarrollamos el Software que su Empresa Necesita para Escalar.';
+const GRADIENT_START_INDEX = 'Desarrollamos el Software que su Empresa '.length;
 
 interface HeroProps {
   onOpenAdvisorModal: () => void;
@@ -8,6 +11,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalculator }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState<{
     title: string;
     value: string;
@@ -15,6 +20,34 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
     details: string[];
     legalNote: string;
   } | null>(null);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && displayText === FULL_HERO_TITLE) {
+      // Queda escrito por 60 segundos
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 60000);
+    } else if (isDeleting && displayText === '') {
+      // Breve pausa tras borrar antes de volver a escribir
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+      }, 600);
+    } else {
+      // Escritura rápida (38ms) o borrado (22ms)
+      const speed = isDeleting ? 22 : 38;
+      timeout = setTimeout(() => {
+        setDisplayText((current) =>
+          isDeleting
+            ? FULL_HERO_TITLE.slice(0, current.length - 1)
+            : FULL_HERO_TITLE.slice(0, current.length + 1)
+        );
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting]);
 
   const metricsData = [
     {
@@ -70,12 +103,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
       <HeroDevVisual />
 
       <div className="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center relative z-10 pt-4 sm:pt-6">
-        {/* Main Headline */}
-        <h1 className="font-barlow text-[36px] sm:text-[46px] md:text-[56px] leading-[1.12] font-bold text-[#1c1b1b] max-w-4xl tracking-tight">
-          Desarrollamos el Software que su Empresa{' '}
-          <span className="bg-gradient-to-r from-[#005ff9] via-[#0047ba] to-[#008f6b] bg-clip-text text-transparent">
-            Necesita para Escalar.
-          </span>
+        {/* Main Headline with Typewriter & Blinking Cursor */}
+        <h1 className="font-barlow text-[36px] sm:text-[46px] md:text-[56px] leading-[1.12] font-bold text-[#1c1b1b] max-w-4xl tracking-tight min-h-[82px] sm:min-h-[105px] md:min-h-[128px]">
+          <span>{displayText.slice(0, GRADIENT_START_INDEX)}</span>
+          {displayText.length > GRADIENT_START_INDEX && (
+            <span className="bg-gradient-to-r from-[#005ff9] via-[#0047ba] to-[#008f6b] bg-clip-text text-transparent">
+              {displayText.slice(GRADIENT_START_INDEX)}
+            </span>
+          )}
+          <span className="inline-block ml-1.5 w-[3.5px] sm:w-[4.5px] h-[0.82em] align-middle bg-[#005ff9] animate-cursor-blink rounded-full shadow-xs shadow-[#005ff9]/50" />
         </h1>
 
         {/* Executive Subtitle */}
