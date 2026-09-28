@@ -142,7 +142,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </span>
               </div>
               <a
-                href="https://wa.me/59899000000?text=Hola,%20quisiera%20consultar%20sobre%20un%20proyecto%20de%20software%20con%20urudev.uy"
+                href="https://wa.me/59893434294?text=Hola,%20quisiera%20consultar%20sobre%20un%20proyecto%20de%20software%20con%20urudev.uy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#f0edec] hover:bg-[#e5e2e1] text-[#1c1b1b] font-barlow text-[13px] font-semibold rounded-lg transition-colors"
