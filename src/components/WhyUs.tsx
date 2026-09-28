@@ -61,7 +61,7 @@ export const WhyUs: React.FC = () => {
               </h3>
               <p className="font-barlow text-[15px] text-[#424656] leading-relaxed">
                 Alcance claro desde el día uno. Sin costos imprevistos, desvíos de presupuesto ni
-                sorpresas de facturación recurrentes.
+                cobros adicionales sorpresa.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-[#f0edec] flex items-center gap-2 text-[13px] font-mono-tech text-[#007b61]">

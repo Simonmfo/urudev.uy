@@ -51,7 +51,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       deliverables: [
         'Modelado de base de datos relacional con integridad referencial ACID estricta',
         'Control de accesos basado en roles (RBAC) y bitácora de auditoría inmutable',
-        'Módulos a medida: facturación electrónica DGI, inventario, logística o clientes',
+        'Módulos a medida: gestión de stock, inventario, logística o clientes',
         'APIs RESTful / GraphQL documentadas con OpenAPI / Swagger',
       ],
       caseStudy:
@@ -65,15 +65,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       description:
         'Interconectamos sus herramientas, bases de datos y APIs para eliminar tareas manuales repetitivas, reduciendo errores humanos y ahorrando cientos de horas de equipo.',
       tagline: 'Integración limpia con pasarelas y ERPs',
-      stack: ['Python', 'Node.js', 'Webhooks', 'RabbitMQ / Kafka', 'Stripe / Mercado Pago / DGI', 'n8n / Workflows custom'],
+      stack: ['Python', 'Node.js', 'Webhooks', 'RabbitMQ / Kafka', 'Stripe / Mercado Pago', 'n8n / Workflows custom'],
       deliverables: [
         'Pipelines de sincronización de datos bidireccional entre CRM, ERP y pasarelas',
         'Alertas instantáneas a Slack/WhatsApp corporativo ante eventos críticos de negocio',
-        'Reconciliación bancaria y facturación automática sin intervención manual',
+        'Reconciliación bancaria y sincronización contable sin intervención manual',
         'Monitoreo y recuperación automática de fallos con reintentos exponenciales',
       ],
       caseStudy:
-        'Caso real: Automatización del circuito de cobranzas y emisión fiscal reduciendo 120 horas mensuales de carga administrativa a cero intervención manual.',
+        'Caso real: Automatización del circuito de cobranzas y reportes reduciendo 120 horas mensuales de carga administrativa a cero intervención manual.',
     },
     {
       id: '04',
@@ -86,7 +86,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       stack: ['Python', 'LangChain / LlamaIndex', 'Gemini / Claude / OpenAI Enterprise', 'Vector DB (pgvector / Qdrant)', 'Embeddings'],
       deliverables: [
         'RAG (Retrieval-Augmented Generation) sobre manuales, contratos o catálogos internos',
-        'Extracción automática de datos estructurados de PDFs, facturas y órdenes de compra',
+        'Extracción automática de datos estructurados de PDFs, planillas y órdenes de compra',
         'Entorno aislado: sus datos empresariales nunca se utilizan para reentrenar modelos públicos',
         'Auditoría y filtros de guardrails para respuestas confiables y sin alucinaciones',
       ],

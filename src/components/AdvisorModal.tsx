@@ -269,7 +269,7 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
                   rows={2}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Ej: Nuevo portal B2B, integración con SAP/DGI, o cotización de ERP a medida..."
+                  placeholder="Ej: Nuevo portal B2B, integración con SAP/APIs, o cotización de ERP a medida..."
                   className="w-full px-3 py-2 text-[13px] rounded-lg border border-[#c2c6d8] focus:border-[#005ff9] focus:outline-none resize-none"
                 />
               </div>

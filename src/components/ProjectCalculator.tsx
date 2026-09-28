@@ -12,7 +12,7 @@ export const ProjectCalculator: React.FC<ProjectCalculatorProps> = ({
   const [scale, setScale] = useState<'mvp' | 'standard' | 'enterprise'>('standard');
   const [integrations, setIntegrations] = useState<string[]>([
     'db_existing',
-    'dgi_billing',
+    'erp_billing',
   ]);
   const [urgency, setUrgency] = useState<'standard' | 'express'>('standard');
 
@@ -174,7 +174,7 @@ export const ProjectCalculator: React.FC<ProjectCalculatorProps> = ({
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {[
-                  { id: 'dgi_billing', label: 'Facturación Electrónica (DGI Uruguay)' },
+                  { id: 'erp_billing', label: 'Integración con ERPs / Sistemas de Gestión' },
                   { id: 'payment_gateways', label: 'Pasarelas de Pago (Stripe / Mercado Pago)' },
                   { id: 'db_existing', label: 'Migración desde Bases de Datos existentes' },
                   { id: 'sso_auth', label: 'Autenticación Corporativa SSO / Google / Azure' },
@@ -292,7 +292,7 @@ export const ProjectCalculator: React.FC<ProjectCalculatorProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#007b61] shrink-0" />
-                <span>Facturación uruguaya formal con IVA deducible</span>
+                <span>Acuerdo formal de servicio y confidencialidad (NDA)</span>
               </div>
             </div>
 
