@@ -40,14 +40,14 @@ export const GuaranteesSection: React.FC = () => {
       icon: 'location_city',
       title: 'Facturación y Respaldo Local',
       description:
-        'Empresa uruguaya debidamente registrada. Emisión de facturas con RUT y soporte técnico en zona horaria local.',
-      badge: 'Soporte Montevideo',
+        'Empresa uruguaya debidamente registrada. Facturación oficial y soporte técnico en zona horaria local.',
+      badge: 'Paysandú • Uruguay',
       modalTitle: 'Respaldo Jurídico y Fiscal en Uruguay',
       modalDetails: [
-        'Sociedad constituida y domiciliada en Montevideo, Uruguay, bajo jurisdicción legal de los tribunales de Montevideo.',
-        'Emisión de comprobantes fiscales electrónicos oficiales con RUT (IVA deducible para empresas uruguayas).',
+        'Sociedad constituida y radicada en Paysandú, Uruguay, bajo jurisdicción legal de la República Oriental del Uruguay.',
+        'Emisión de comprobantes fiscales oficiales (IVA deducible para empresas uruguayas).',
         'Ingenieros de software radicados localmente trabajando en huso horario GMT-3 (sin desfasajes horarios de ultramar).',
-        'Disponibilidad para reuniones ejecutivas presenciales en nuestra oficina de Plaza Independencia 838.',
+        'Disponibilidad para reuniones ejecutivas presenciales en Paysandú o de forma remota para todo el país.',
       ],
     },
   ];

@@ -12,17 +12,14 @@ export const Footer: React.FC = () => {
               urudev<span className="text-[#005ff9]">.uy</span>
             </span>
             <span className="font-mono-tech text-[12px] text-[#424656] bg-[#f0edec] border border-[#c2c6d8]/60 px-2 py-0.5 rounded font-medium">
-              MVD • UY
+              PAYSANDÚ • UY
             </span>
           </div>
           <p className="font-barlow text-[14px] text-[#424656] leading-relaxed">
-            Sede Central: Plaza Independencia 838, Montevideo, Uruguay. Ingeniería de Software de Alta
-            Fiabilidad.
+            Paysandú, Uruguay. Ingeniería de Software de Alta Fiabilidad.
           </p>
           <div className="flex items-center gap-3 text-[12px] font-mono-tech text-[#737687] mt-1">
-            <span>RUT: 21.849.201.0014</span>
-            <span>•</span>
-            <span>Montevideo, Uruguay</span>
+            <span>Paysandú, Uruguay</span>
           </div>
         </div>
 

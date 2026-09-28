@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
         'Monitoreo activo de logs, disponibilidad y performance en nube.',
         'Capacitación y handoff técnico a su equipo interno.',
       ],
-      legalNote: 'Garantía respaldada por contrato firmado con personería jurídica en Montevideo.',
+      legalNote: 'Garantía respaldada por contrato firmado con personería jurídica en Uruguay.',
     },
   ];
 
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdvisorModal, onExploreCalcula
         <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#f0edec] border border-[#c2c6d8]/50 mb-8 shadow-xs hover:border-[#005ff9]/50 transition-colors">
           <span className="w-2 h-2 rounded-full bg-[#3fd5ae] animate-pulse"></span>
           <span className="font-mono-tech text-[12px] uppercase tracking-wider text-[#1c1b1b] font-semibold">
-            SOFTWARE B2B A MEDIDA · MONTEVIDEO, URUGUAY
+            SOFTWARE B2B A MEDIDA · PAYSANDÚ, URUGUAY
           </span>
         </div>
 

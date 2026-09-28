@@ -108,9 +108,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <span className="material-symbols-outlined text-[20px]">location_on</span>
                 </div>
                 <div>
-                  <span className="font-barlow text-[14px] text-[#424656] block">Oficinas centrales</span>
+                  <span className="font-barlow text-[14px] text-[#424656] block">Ubicación</span>
                   <span className="font-barlow text-[18px] font-semibold text-[#1c1b1b]">
-                    Plaza Independencia 838, Montevideo
+                    Paysandú, Uruguay
                   </span>
                 </div>
               </div>
@@ -164,7 +164,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   ¡Consulta recibida correctamente!
                 </h3>
                 <p className="font-barlow text-[16px] text-[#424656] max-w-md mx-auto mb-6">
-                  Un ingeniero senior de nuestro equipo en Montevideo revisará los detalles de su
+                  Un ingeniero senior de nuestro equipo revisará los detalles de su
                   necesidad y le contactará en menos de 24 horas hábiles con una propuesta formal.
                 </p>
                 <button

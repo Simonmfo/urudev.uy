@@ -292,7 +292,7 @@ export const ProjectCalculator: React.FC<ProjectCalculatorProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#007b61] shrink-0" />
-                <span>Facturación uruguaya formal con RUT e IVA deducible</span>
+                <span>Facturación uruguaya formal con IVA deducible</span>
               </div>
             </div>
 

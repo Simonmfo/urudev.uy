@@ -72,7 +72,7 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
                 <span className="font-semibold text-[#1c1b1b]">
                   {meetingType === 'video'
                     ? 'Videollamada Google Meet (15 min)'
-                    : 'Reunión Presencial (Plaza Independencia 838)'}
+                    : 'Reunión Presencial (Paysandú, Uruguay)'}
                 </span>
               </div>
               <div className="flex justify-between">
@@ -150,7 +150,7 @@ export const AdvisorModal: React.FC<AdvisorModalProps> = ({ isOpen, onClose }) =
                     <Building2 className="w-4 h-4 text-[#005ff9] shrink-0" />
                     <div>
                       <div className="font-barlow text-[14px] font-bold">Presencial</div>
-                      <div className="text-[11px] font-barlow text-[#737687]">Montevideo · Plaza Indep.</div>
+                      <div className="text-[11px] font-barlow text-[#737687]">Paysandú, Uruguay</div>
                     </div>
                   </button>
                 </div>
