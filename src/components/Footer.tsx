@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
       <div className="absolute bottom-0 right-10 w-[400px] h-[300px] bg-[#00b087]/8 rounded-full blur-3xl pointer-events-none" />
 
       {/* Giant Background Watermark Behind Text */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0">
-        <span className="font-barlow text-[35vw] font-black tracking-tighter leading-none whitespace-nowrap bg-gradient-to-b from-white/[0.38] via-white/[0.25] to-white/[0.12] bg-clip-text text-transparent transform translate-y-4">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0 px-6">
+        <span className="font-barlow text-[10vw] sm:text-[11.5vw] md:text-[12.5vw] font-black tracking-tighter leading-none whitespace-nowrap bg-gradient-to-b from-white/[0.35] via-white/[0.22] to-white/[0.10] bg-clip-text text-transparent transform translate-y-6 sm:translate-y-10">
           urudev.uy
         </span>
       </div>
