@@ -16,6 +16,13 @@ export const Footer: React.FC = () => {
       <div className="absolute -top-32 left-1/4 w-[500px] h-[350px] bg-[#005ff9]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-[400px] h-[300px] bg-[#00b087]/8 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Giant Background Watermark Behind Text */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden select-none pointer-events-none z-0">
+        <span className="font-barlow text-[23vw] font-black tracking-tighter leading-none whitespace-nowrap bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.015] bg-clip-text text-transparent transform translate-y-10 sm:translate-y-14">
+          urudev.uy
+        </span>
+      </div>
+
       {/* Main Container */}
       <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-12 relative z-10">
         {/* Top Brand Showcase Bar */}
@@ -200,13 +207,6 @@ export const Footer: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Giant Background Watermark */}
-      <div className="w-full overflow-hidden select-none pointer-events-none flex justify-center opacity-[0.03] text-white">
-        <span className="font-barlow text-[14vw] font-black tracking-tighter leading-none whitespace-nowrap -mb-6">
-          urudev.uy
-        </span>
       </div>
     </footer>
   );
