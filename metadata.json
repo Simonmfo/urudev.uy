@@ -1,6 +1,4 @@
 {
   "name": "urudev.uy — Ingeniería de Software Enterprise",
-  "description": "Desarrollamos el Software que su Empresa Necesita para Escalar. Sistemas de gestión, plataformas web y automatización con garantía de entrega.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Desarrollamos el Software que su Empresa Necesita para Escalar. Sistemas de gestión, plataformas web y automatización con garantía de entrega."
 }
