@@ -16,28 +16,28 @@ export const Logo: React.FC<LogoProps> = ({
   const sizeStyles = {
     sm: {
       box: 'w-7 h-7 rounded-lg',
-      svg: 'w-5 h-5',
+      svg: 'w-4.5 h-4.5',
       title: 'text-[17px]',
       subtitle: 'text-[7px]',
       gap: 'gap-2.5',
     },
     md: {
       box: 'w-9 h-9 rounded-xl',
-      svg: 'w-6 h-6',
+      svg: 'w-5.5 h-5.5',
       title: 'text-[21px]',
       subtitle: 'text-[8.5px]',
       gap: 'gap-3',
     },
     lg: {
       box: 'w-12 h-12 rounded-2xl shadow-lg',
-      svg: 'w-8 h-8',
+      svg: 'w-7 h-7',
       title: 'text-[28px]',
       subtitle: 'text-[10px]',
-      gap: 'gap-4',
+      gap: 'gap-3.5',
     },
     xl: {
       box: 'w-16 h-16 rounded-2xl shadow-xl shadow-[#005ff9]/20',
-      svg: 'w-11 h-11',
+      svg: 'w-10 h-10',
       title: 'text-[36px] sm:text-[44px]',
       subtitle: 'text-[11px] sm:text-[12px]',
       gap: 'gap-4 sm:gap-5',
@@ -46,12 +46,13 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`flex items-center select-none ${sizeStyles.gap} ${className}`}>
-      {/* Developer Monogram Emblem: Code Brackets & Slash fused into 'U' */}
+      {/* Terminal Minimalist Monogram (>_) */}
       <div
-        className={`relative ${sizeStyles.box} bg-gradient-to-b from-[#11192e] to-[#070a14] border border-[#005ff9]/40 flex items-center justify-center shrink-0 overflow-hidden shadow-md group transition-all duration-300 hover:border-[#005ff9] hover:shadow-[#005ff9]/25 hover:scale-105`}
+        className={`relative ${sizeStyles.box} bg-gradient-to-b from-[#11192e] to-[#070a14] border border-[#005ff9]/40 flex items-center justify-center shrink-0 overflow-hidden shadow-md group transition-all duration-300 hover:border-[#005ff9] hover:shadow-[#005ff9]/30 hover:scale-105`}
       >
-        {/* Ambient Top Glow */}
-        <div className="absolute -top-3 inset-x-0 h-4 bg-[#005ff9]/30 blur-xs rounded-full pointer-events-none" />
+        {/* Subtle top-edge light reflection */}
+        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+        <div className="absolute -top-3 inset-x-0 h-4 bg-[#005ff9]/35 blur-xs rounded-full pointer-events-none" />
 
         <svg
           viewBox="0 0 40 40"
@@ -60,39 +61,32 @@ export const Logo: React.FC<LogoProps> = ({
           className={sizeStyles.svg}
         >
           <defs>
-            {/* Gradient for the U Code Brackets */}
-            <linearGradient id="uCodeBracketGrad" x1="6" y1="8" x2="34" y2="32" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#005ff9" />
-              <stop offset="50%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#3fd5ae" />
+            <linearGradient id="chevronGrad" x1="10" y1="13" x2="20" y2="27" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#005ff9" />
             </linearGradient>
-
-            {/* Gradient for the Slash */}
-            <linearGradient id="slashGrad" x1="16" y1="26" x2="24" y2="10" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#005ff9" />
+            <linearGradient id="cursorGrad" x1="22" y1="27" x2="30" y2="27" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#00e599" />
               <stop offset="100%" stopColor="#3fd5ae" />
             </linearGradient>
           </defs>
 
-          {/* Left code bracket '<' curving through base to right code bracket '>' forming the 'U' */}
+          {/* Terminal Prompt Chevron '>' */}
           <path
-            d="M11 9L6 17L11 24C13.2 28.5 16.5 31.5 20 31.5C23.5 31.5 26.8 28.5 29 24L34 17L29 9"
-            stroke="url(#uCodeBracketGrad)"
-            strokeWidth="3.2"
+            d="M11 13L19.5 20L11 27"
+            stroke="url(#chevronGrad)"
+            strokeWidth="3.6"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
 
-          {/* Developer Forward Slash in Center */}
+          {/* Terminal Command Cursor '_' */}
           <path
-            d="M16.5 25.5L23.5 11"
-            stroke="url(#slashGrad)"
-            strokeWidth="3.2"
+            d="M22.5 27H30"
+            stroke="url(#cursorGrad)"
+            strokeWidth="3.6"
             strokeLinecap="round"
           />
-
-          {/* Terminal Pulse Dot */}
-          <circle cx="26.5" cy="22" r="1.8" fill="#3fd5ae" />
         </svg>
       </div>
 
